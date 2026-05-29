@@ -27,19 +27,19 @@ nav{
     z-index: 1000;
 }
 #home {
-    scroll-margin-top: 80px; /* adjust based on nav height */
+    scroll-margin-top: 80px; 
 }
 
 #aboutme {
-    scroll-margin-top: 80px; /* adjust based on nav height */
+    scroll-margin-top: 80px; 
 }
 
 #projects {
-    scroll-margin-top: 80px; /* adjust based on nav height */
+    scroll-margin-top: 80px; 
 }
 
 #contacts {
-    scroll-margin-top: 80px; /* adjust based on nav height */
+    scroll-margin-top: 80px; 
 }
 
 nav a{
@@ -66,7 +66,7 @@ nav a::after{
     bottom: 0;
     width: 100%;
     height: 3px;
-    background-color: #A7B689;
+    background-color: #6c63ff;
     border-radius: 3px;
     transform: scaleX(0);
     transform-origin: center;
@@ -146,11 +146,13 @@ nav a:hover::after{
 
 .profile img:hover{
     transform: translateY(-5px);
+    box-shadow: 0 10px 25px #574fd6;
 }
  
 /*About me section*/
 
 .divider {
+    grid-area: divider;
     display: flex;
     align-items: center;
     text-align: center;
@@ -298,76 +300,94 @@ nav a:hover::after{
     grid-area: skill;
     display: grid;
     grid-template-columns: 50% 50%;
-    gap: 10px;
-    margin: 10px 100px 100px 100px
-
+    gap: 30px;
+    margin: 10px 100px 100px 100px;
 }
+
 .skilltile{
     border-radius: 10px;
-    background-color: #959694;  
+    background-color: #303030;  
     display: flex;
     align-items: center;
+    height: 60px;
     padding: 10px;
     gap: 10px;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.4s ease, background-color 0.4s ease;
 }
+
+.skilltile:hover {
+    transform: translateY(-5px);
+    background-color: #2A2A2A;
+    box-shadow: 0 10px 25px #262258;
+}
+
+
 .mastery{
     display: flex;
     flex-direction: column;
     width: 100%;
 }
+
 .mastery p {
     margin: 0;
     margin-bottom: 5px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
 }
+
 .bar{
     width: 90%;
-    height: 20px;
-    background-color: #2A2A2A;
+    height: 10px;
+    background-color: #666;
     border-radius: 5px;
     overflow: hidden;
-    margin-top: 10px;
 }
+
 .progress{
     height: 100%;
-    background-color: #A7B689;
+    background-color: #6c63ff;
     display: flex;
     justify-content: end;
-    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    align-items: center;
+    padding-right: 5px;
+    border-radius: 5px;
+
+    transform: scaleX(1);
+    transform-origin: left;
 }
-.html{
-    width: 60%;
+
+@keyframes fillBar {
+    from {
+        transform: scaleX(0);
+    }
+    to {
+        transform: scaleX(1);
+    }
 }
-.css{
-    width: 50%;
+
+.skilltile:hover .progress{
+    animation: none;
+    transform: scaleX(0);
+    animation: fillBar 0.8s ease forwards;
 }
-.js{
-    width: 10%;
-}
-.java{
-    width: 15%;
-}
-.python{
-    width: 25%;
-}
-.sql{
-    width: 15%;
-}
+
+.html{ width: 75%; }
+.css{ width: 50%; }
+.js{ width: 10%; }
+.java{ width: 15%; }
+.python{ width: 25%; }
+.sql{ width: 15%; }
 
 .icon{
     max-height: 50px;
+    height: 80%;
     width: auto;
-    border: #2A2A2A 1px solid;
+    filter: brightness(0) invert(1);
     border-radius: 10px;
-    padding: 20px;
-    margin: 10px 10px 10px 20px;
-    background-color: #D3CACA;
-    display: flex;
-    justify-content: baseline;
-    align-items: center;
-
+    padding: 5px;
 }
+
 .aspirations{
     grid-area: aspiration;
     border-top: 1px solid #959694;
@@ -416,7 +436,7 @@ nav a:hover::after{
     border-radius: 20px;
     background-color: #5D5D5D;
     width: 400px;
-    height: 400px;
+    height: auto;
     box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     transition: transform 0.9s ease;
 }
@@ -433,7 +453,7 @@ nav a:hover::after{
     margin: 20px 0px 0px 0px;
     border-radius: 20px;
     border: 1px solid #2f2f2f;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    
 }
 .projcontent{
     display: grid;
@@ -444,13 +464,31 @@ nav a:hover::after{
 .projcontent h4, 
 .projcontent p{
     margin: 5px;
+    text-align: center;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: #D3CACA;
+    color: #fff;
 }
+
+.techuse{
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.techuse img{
+    margin: 3px 0px 20px 0px;
+    height: 20px;
+    filter: brightness(0) invert(1);
+    padding: 17px;
+    border-radius: 25px;
+}
+
+
+
 
 /*Learning Reflection*/
 
@@ -467,7 +505,6 @@ nav a:hover::after{
     align-items: center;
     text-align: center;
 
-    /* glass effect */
     background: rgba(93, 93, 93, 0.25);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
