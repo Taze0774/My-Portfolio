@@ -1,0 +1,601 @@
+html{
+    scroll-behavior: smooth;
+}
+
+body{
+    background-color: #4E4D4D;
+    margin: 0%;
+}
+nav{
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+    background-color: #959694;
+    padding: 14px;
+    margin-top: 10px;
+    border-radius: 100px;
+    border: #666 2px solid;
+
+    background: rgba(93, 93, 93, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    
+    position: fixed;
+    top: 0;
+    left: 30%;
+    width: 40%;
+    z-index: 1000;
+}
+#home {
+    scroll-margin-top: 80px; /* adjust based on nav height */
+}
+
+#aboutme {
+    scroll-margin-top: 80px; /* adjust based on nav height */
+}
+
+#projects {
+    scroll-margin-top: 80px; /* adjust based on nav height */
+}
+
+#contacts {
+    scroll-margin-top: 80px; /* adjust based on nav height */
+}
+
+nav a{
+    position: relative;
+    font-weight: 500;
+    transition: 0.5s;
+    text-decoration: none;
+    color: aliceblue;
+    font-size: 16px;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    padding: 2px 0;
+}
+
+nav a:hover{
+    color: #a0a0a0;
+    font-weight: 4px;
+
+}
+
+nav a::after{
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #A7B689;
+    border-radius: 3px;
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: transform 0.4s ease;
+}
+
+nav a:hover::after{
+    transform: scaleX(1);
+    transform-origin: center;
+}
+
+.home{
+    display: grid;
+    grid-area: home;
+    margin: 15px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: 
+    "profile   intro"
+    "profile    socmeds";
+    column-gap: 25px;
+    row-gap: 5px;
+    min-height: 90vh;
+}
+
+.introductory{
+    grid-area: intro;
+    display: grid;
+    align-items: start;
+    align-content: end;
+    justify-content: start;
+    margin: 5% 0% 0% 0%;
+    
+}
+.introductory p {
+    font-size: large;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif; 
+    color: aliceblue;
+}
+.introductory h1,
+.introductory h3{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+    margin: 0%;
+}
+.socmeds{
+    grid-area: socmeds;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #959694;
+    
+}
+
+.icons{
+    margin-top: 3px;
+    height: 30px;
+    filter: brightness(0) invert(1);
+    padding: 10px;
+}
+
+.profile{
+    grid-area: profile;
+    display: flex;
+    justify-content: end;
+    padding: 50px 10px 0px 0px;
+}
+
+.profile img{
+    max-width: 700px;
+    width: 70%;
+    height: auto;
+    border: 2px ;
+    border-radius: 20px;
+    background-color: #303030;
+    margin: 10% 0% 15% 15%; 
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.9s ease;
+}
+
+.profile img:hover{
+    transform: translateY(-5px);
+}
+ 
+/*About me section*/
+
+.divider {
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color: aliceblue;
+    margin: 0px 20px 0px 20px;
+}
+
+.divider::before,
+.divider::after {
+  content: "";
+  flex: 1;
+  border-bottom: 2px solid #959694;
+}
+
+.divider span {
+  padding: 0 10px;
+}
+
+.aboutme{
+    grid-area: aboutme;
+    display: grid;
+    grid-template-areas: 
+    "description    description"
+    "educ           relevcourse"
+    "aspiration     aspiration"
+    "sep            sep"
+    "skill          skill";
+    gap: 15px;
+    margin: 0px 30px 0px 30px;
+    
+}
+
+.description{
+    grid-area: description;
+    border-radius: 20px;
+    background-color: #5D5D5D;
+    text-align: center;
+    align-content: center;
+    margin: 50px 100px 50px 100px;
+}
+.description p{
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color: #D3CACA;
+    margin: 20px;
+}
+
+.educbg{
+    grid-area: educ;
+    border: 2px solid #2A2A2A;
+    border-radius: 20px;
+    margin: 0px 0px 0px 100px;
+    position: relative;
+    padding-top: 30px;
+}
+.educbg h5{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #959694;
+    background-color: #4E4D4D;
+     padding: 0 12px;
+}
+
+.educbg p {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    margin-top: 50px;
+    padding: 0px 50px 0px 50px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color: #D3CACA;
+    
+}
+
+.relevcourse{
+    grid-area: relevcourse;
+    border: 2px solid #2A2A2A;
+    border-radius: 20px;
+    text-align: center;
+    align-content: center;
+    margin: 0px 100px 0px 0px;
+    position: relative;
+    padding-top: 30px;
+}
+
+.relevcourse h5{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #959694;
+    background-color: #4E4D4D;
+     padding: 0 15px;
+}
+
+.relevcourse ul{
+    list-style: none;
+    margin: 0px 50px 50px 0px;
+    text-align: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #D3CACA;
+    font-size: medium;
+    display: grid;
+    justify-content: center;
+    gap: 3px;
+}
+
+/*SKILLS*/
+
+.individer{
+    grid-area: sep;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 20px 0;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-size: large;
+    color: #959694;
+    margin: 30px 100px 30px 100px;
+}
+
+.individer::before,
+.individer::after {
+  content: "";
+  flex: 1;
+  border-bottom: 1px solid #959694;
+}
+
+.individer h5 {
+  padding: 0 10px;
+}
+
+.skills{
+    grid-area: skill;
+    display: grid;
+    grid-template-columns: 50% 50%;
+    gap: 10px;
+    margin: 10px 100px 100px 100px
+
+}
+.skilltile{
+    border-radius: 10px;
+    background-color: #959694;  
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    gap: 10px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+}
+.mastery{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+.mastery p {
+    margin: 0;
+    margin-bottom: 5px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+.bar{
+    width: 90%;
+    height: 20px;
+    background-color: #2A2A2A;
+    border-radius: 5px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+.progress{
+    height: 100%;
+    background-color: #A7B689;
+    display: flex;
+    justify-content: end;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.html{
+    width: 60%;
+}
+.css{
+    width: 50%;
+}
+.js{
+    width: 10%;
+}
+.java{
+    width: 15%;
+}
+.python{
+    width: 25%;
+}
+.sql{
+    width: 15%;
+}
+
+.icon{
+    max-height: 50px;
+    width: auto;
+    border: #2A2A2A 1px solid;
+    border-radius: 10px;
+    padding: 20px;
+    margin: 10px 10px 10px 20px;
+    background-color: #D3CACA;
+    display: flex;
+    justify-content: baseline;
+    align-items: center;
+
+}
+.aspirations{
+    grid-area: aspiration;
+    border-top: 1px solid #959694;
+    margin: 20px 100px 0px 100px;
+    position: relative;
+    padding-top: 30px;
+}
+.aspirations p{
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    padding: 0px 0px 40px 0px;
+    font-family:cursive;
+    font-size: medium;
+    color: #D3CACA;
+}
+.aspirations h5{
+    position: absolute;
+    top: -30px;
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 0 10px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #959694;
+    background-color: #4E4D4D;
+    padding: 0 15px;
+}
+
+/*Projects*/
+
+.projects{
+    grid-area: projects;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    margin: 50px 0px 60px 25px;
+    justify-content: center;
+    align-content: center;
+}
+
+.projecttiles{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    border: 1px solid #959694 ;
+    border-radius: 20px;
+    background-color: #5D5D5D;
+    width: 400px;
+    height: 400px;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    transition: transform 0.9s ease;
+}
+
+.projecttiles:hover{
+    transform: translateY(-5px);
+    
+}
+
+.projecttiles img{
+    max-width: 350px;
+    width: 100%;
+    height: 170px;
+    margin: 20px 0px 0px 0px;
+    border-radius: 20px;
+    border: 1px solid #2f2f2f;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+}
+.projcontent{
+    display: grid;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 15px;
+}
+.projcontent h4, 
+.projcontent p{
+    margin: 5px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #D3CACA;
+}
+
+/*Learning Reflection*/
+
+.reflections{
+    grid-area: reflection;
+    display: grid;
+    justify-content: center;
+    margin: 50px 0px 50px 0px;
+}
+
+.content{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
+    /* glass effect */
+    background: rgba(93, 93, 93, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+
+    border-radius: 20px;
+    max-width: 900px;
+    width: 100%;
+    margin: auto;
+    padding: 20px;
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+}
+
+.content p, 
+.content h4{
+    overflow-wrap: break-word;
+    word-break: break-word;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: aliceblue;
+}
+
+/*Contact*/
+
+.contacts{
+    grid-area: contacts;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 60px 20px;
+}
+
+
+.sendemail{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    max-width: 450px;
+    background: #4E4D4D;
+    border-radius: 16px;
+    padding: 40px 30px 30px;
+    position: relative;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    border: 1px solid #5D5D5D;
+}
+
+
+.sendemail h3{
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #4E4D4D;
+    padding: 0 12px;
+    color: #d0d0d0;
+    font-family: 'Gill Sans', Calibri, sans-serif;
+    font-size: 16px;
+    letter-spacing: 1px;
+}
+
+
+.sendemail form{
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding-right:30px ;
+}
+
+
+.sendemail input,
+.sendemail textarea{
+    width: 100%;
+    padding: 10px 12px;
+    border-radius: 8px;
+    border: 1px solid #666;
+    background: #2f2f2f;
+    color: #fff;
+    outline: none;
+    transition: 0.2s ease;
+}
+
+
+.sendemail input:focus,
+.sendemail textarea:focus{
+    border-color: #a0a0a0;
+    background: #2a2a2a;
+}
+
+
+.sendemail textarea{
+    min-height: 120px;
+    resize: none;
+}
+
+
+.sendemail button{
+    width: 100%;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    background: #6c63ff;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+    transition: 0.2s ease;
+    margin-left: 10px;
+    
+}
+
+.sendemail button:hover{
+    background: #574fd6;
+}
+
+footer{
+    grid-area: footer;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-top-right-radius: 20px;
+    border-top-left-radius: 20px;
+    background-color: #2f2f2f;
+}
+
+footer h3{
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: #fff;
+}
