@@ -6,3 +6,16 @@ function send_email(){
     }
     emailjs.send("service_ptbxrpo","template_7vchz9t", parms).then(alert("Email send successfully!"))
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+    const toggle = document.querySelector('.nav-toggle');
+    const navLinks = document.querySelector('.nav-links');
+
+    toggle.addEventListener('click', () => {
+        navLinks.classList.toggle('open');
+    });
+
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('open'));
+    });
+});

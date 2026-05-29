@@ -59,6 +59,15 @@ nav a:hover{
 
 }
 
+.nav-toggle{
+    display: none;
+}
+
+.nav-links{
+    display: flex;
+    gap: 20px;
+}
+
 nav a::after{
     content: '';
     position: absolute;
@@ -535,6 +544,7 @@ nav a:hover::after{
     justify-content: center;
     align-items: center;
     padding: 60px 20px;
+    gap: 20px;
 }
 
 
@@ -547,10 +557,14 @@ nav a:hover::after{
     border-radius: 16px;
     padding: 40px 30px 30px;
     position: relative;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.3);
-    border: 1px solid #5D5D5D;
+    border: 1px solid #2f2f2f;
+     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
+.sendemail:hover{
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #2A2A2A;
+}
 
 .sendemail h3{
     position: absolute;
@@ -618,6 +632,52 @@ nav a:hover::after{
     background: #574fd6;
 }
 
+.contactinfo {
+    width: 320px;
+    height: 320px;
+    padding: 20px;
+    background: #4E4D4D;
+    border-radius: 15px;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+
+    border: 1px solid #333;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contactinfo:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px #2A2A2A;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    background-color: #333;
+    gap: 12px;
+    padding: 10px;
+    border-radius: 10px;
+    transition: background 0.3s ease;
+}
+
+.contact-item:hover {
+    background: #666;
+}
+
+.icons {
+    width: 24px;
+    height: 24px;
+}
+
+.contact-item p {
+    margin: 0;
+    color: #f1f1f1;
+    font-size: 14px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    font-weight: 40px;
+}
+
 footer{
     grid-area: footer;
     display: flex;
@@ -635,4 +695,204 @@ footer h3{
     justify-content: center;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: #fff;
+}
+
+@media (max-width: 1024px) {
+    nav {
+        left: 10%;
+        width: 80%;
+    }
+ 
+    .description  { margin: 40px; }
+    .educbg       { margin-left: 40px; }
+    .relevcourse  { margin-right: 40px; }
+    .aspirations  { margin: 20px 40px 0; }
+    .skills       { margin: 10px 40px 80px; }
+    .individer    { margin: 30px 40px; }
+ 
+    .projects {
+        grid-template-columns: 1fr 1fr;
+        margin: 40px 20px;
+    }
+}
+ 
+
+@media (max-width: 768px) {
+ 
+   nav {
+    left: 0;
+    top: 0;
+    width: 100%;
+    border-radius: 0;
+    border-left: none;
+    border-right: none;
+    border-top: none;
+    margin-top: 0;
+    padding: 0 20px;
+    flex-direction: column;
+    align-items: stretch;
+    gap: 0;
+    box-sizing: border-box;
+}
+
+.nav-toggle {
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    width: 100%;
+    padding: 14px 0;
+    font-size: 24px;
+    background: rgba(93, 93, 93, 0.25);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: none;
+    
+}
+
+.nav-links {
+    display: none;
+    flex-direction: column;
+    gap: 0;
+    width: 100%;
+    max-height: 200px;
+    padding-bottom: 10px;
+}
+
+.nav-links.open {
+    display: flex;
+}
+
+.nav-links a {
+    font-size: 15px;
+    padding: 10px 0;
+    border-bottom: 1px solid rgba(255,255,255,0.08);
+}
+ 
+    /* Home — stack vertically */
+    .home {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "profile"
+            "intro"
+            "socmeds";
+        margin: 70px 15px 20px;
+        min-height: auto;
+        row-gap: 15px;
+    }
+ 
+    .profile {
+        justify-content: center;
+        padding: 0;
+    }
+ 
+    .profile img {
+        width: 70%;
+        margin: 0 auto;
+    }
+ 
+    .introductory {
+        align-content: center;
+        margin: 0;
+        text-align: center;
+    }
+ 
+    .socmeds {
+        text-align: center;
+    }
+ 
+    /* About me — single column */
+    .aboutme {
+        grid-template-columns: 1fr;
+        grid-template-areas:
+            "description"
+            "educ"
+            "relevcourse"
+            "aspiration"
+            "sep"
+            "skill";
+        margin: 0 15px;
+        gap: 25px;
+    }
+ 
+    .description  { margin: 20px 0; }
+    .educbg       { margin: 0; }
+    .relevcourse  { margin: 0; }
+    .aspirations  { margin: 20px 0 0; }
+    .individer    { margin: 20px 0; }
+ 
+    .skills {
+        grid-template-columns: 1fr;
+        margin: 10px 0 60px;
+        gap: 15px;
+    }
+ 
+    /* Projects — single column */
+    .projects {
+        grid-template-columns: 1fr;
+        margin: 30px 15px;
+        gap: 20px;
+    }
+ 
+    .projecttiles {
+        max-width: 100%;
+    }
+ 
+    /* Reflection */
+    .reflections {
+        margin: 30px 15px;
+    }
+ 
+    .content {
+        padding: 15px 18px;
+    }
+ 
+    /* Contact */
+    .contacts { 
+        padding: 40px 15px; 
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+ 
+    .sendemail {
+        padding: 30px 20px 20px;
+    }
+}
+ 
+
+@media (max-width: 480px) {
+    .profile img {
+        width: 85%;
+    }
+ 
+    .introductory {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .socmeds hr{
+        display: none;
+    }
+
+    .introductory h1 {
+        font-size: 1.5rem;
+    }
+ 
+    .projecttiles img {
+        height: 140px;
+    }
+ 
+    .skills {
+        gap: 12px;
+    }
+   .techuse img {
+        height: 40px;
+        padding: 10px;
+    }
+
+    .reflections{
+        width: 85%;
+    }
+
 }
